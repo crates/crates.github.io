@@ -21,9 +21,10 @@
 # https://enable-cors.org/
 # https://www.w3.org/TR/cors/
 
-# <IfModule mod_headers.c>
-#     Header set Access-Control-Allow-Origin "*"
-# </IfModule>
+<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "cr8s.net"
+    Header set Access-Control-Allow-Origin "www.google-analytics.com"
+</IfModule>
 
 # ----------------------------------------------------------------------
 # | Cross-origin images                                                |
@@ -52,6 +53,13 @@
 <IfModule mod_headers.c>
     <FilesMatch "\.(eot|otf|tt[cf]|woff2?)$">
         Header set Access-Control-Allow-Origin "*"
+    </FilesMatch>
+</IfModule>
+
+<IfModule mod_headers.c>
+    <FilesMatch "\.(js?)$">
+        Header set Access-Control-Allow-Origin "www.google-analytics.com"
+        Header set Access-Control-Allow-Origin "cr8s.net"
     </FilesMatch>
 </IfModule>
 
@@ -855,15 +863,12 @@ FileETag None
 # to something like one week.
 #
 # https://httpd.apache.org/docs/current/mod/mod_expires.html
-
 <IfModule mod_expires.c>
-
     ExpiresActive on
-    ExpiresDefault                                      "access plus 1 month"
+    ExpiresDefault                                      "access plus 0 seconds"
 
   # CSS
-
-    ExpiresByType text/css                              "access plus 1 year"
+    ExpiresByType text/css                              "access plus 0 seconds"
 
 
   # Data interchange
@@ -882,25 +887,23 @@ FileETag None
 
 
   # Favicon (cannot be renamed!) and cursor images
+    ExpiresByType image/vnd.microsoft.icon              "access plus 0 seconds"
+    ExpiresByType image/x-icon                          "access plus 0 seconds"
 
-    ExpiresByType image/vnd.microsoft.icon              "access plus 1 week"
-    ExpiresByType image/x-icon                          "access plus 1 week"
-
-  # HTML
-
+  # HTM
     ExpiresByType text/html                             "access plus 0 seconds"
 
 
   # JavaScript
 
-    ExpiresByType application/javascript                "access plus 1 year"
-    ExpiresByType application/x-javascript              "access plus 1 year"
-    ExpiresByType text/javascript                       "access plus 1 year"
+    ExpiresByType application/javascript                "access plus 0 seconds"
+    ExpiresByType application/x-javascript              "access plus 0 seconds"
+    ExpiresByType text/javascript                       "access plus 0 seconds"
 
 
   # Manifest files
 
-    ExpiresByType application/manifest+json             "access plus 1 week"
+    ExpiresByType application/manifest+json             "access plus 0 seconds"
     ExpiresByType application/x-web-app-manifest+json   "access plus 0 seconds"
     ExpiresByType text/cache-manifest                   "access plus 0 seconds"
 
@@ -912,48 +915,48 @@ FileETag None
 
   # Media files
 
-    ExpiresByType audio/ogg                             "access plus 1 month"
-    ExpiresByType image/bmp                             "access plus 1 month"
-    ExpiresByType image/gif                             "access plus 1 month"
-    ExpiresByType image/jpeg                            "access plus 1 month"
-    ExpiresByType image/png                             "access plus 1 month"
-    ExpiresByType image/svg+xml                         "access plus 1 month"
-    ExpiresByType image/webp                            "access plus 1 month"
-    ExpiresByType video/mp4                             "access plus 1 month"
-    ExpiresByType video/ogg                             "access plus 1 month"
-    ExpiresByType video/webm                            "access plus 1 month"
+    ExpiresByType audio/ogg                             "access plus 0 seconds"
+    ExpiresByType image/bmp                             "access plus 0 seconds"
+    ExpiresByType image/gif                             "access plus 0 seconds"
+    ExpiresByType image/jpeg                            "access plus 0 seconds"
+    ExpiresByType image/png                             "access plus 0 seconds"
+    ExpiresByType image/svg+xml                         "access plus 0 seconds"
+    ExpiresByType image/webp                            "access plus 0 seconds"
+    ExpiresByType video/mp4                             "access plus 0 seconds"
+    ExpiresByType video/ogg                             "access plus 0 seconds"
+    ExpiresByType video/webm                            "access plus 0 seconds"
 
 
   # Web fonts
 
     # Collection
-    ExpiresByType font/collection                       "access plus 1 month"
+    ExpiresByType font/collection                       "access plus 0 seconds"
 
     # Embedded OpenType (EOT)
-    ExpiresByType application/vnd.ms-fontobject         "access plus 1 month"
-    ExpiresByType font/eot                              "access plus 1 month"
+    ExpiresByType application/vnd.ms-fontobject         "access plus 0 seconds"
+    ExpiresByType font/eot                              "access plus 0 seconds"
 
     # OpenType
-    ExpiresByType font/opentype                         "access plus 1 month"
-    ExpiresByType font/otf                              "access plus 1 month"
+    ExpiresByType font/opentype                         "access plus 0 seconds"
+    ExpiresByType font/otf                              "access plus 0 seconds"
 
     # TrueType
-    ExpiresByType application/x-font-ttf                "access plus 1 month"
-    ExpiresByType font/ttf                              "access plus 1 month"
+    ExpiresByType application/x-font-ttf                "access plus 0 seconds"
+    ExpiresByType font/ttf                              "access plus 0 seconds"
 
     # Web Open Font Format (WOFF) 1.0
-    ExpiresByType application/font-woff                 "access plus 1 month"
-    ExpiresByType application/x-font-woff               "access plus 1 month"
-    ExpiresByType font/woff                             "access plus 1 month"
+    ExpiresByType application/font-woff                 "access plus 0 seconds"
+    ExpiresByType application/x-font-woff               "access plus 0 seconds"
+    ExpiresByType font/woff                             "access plus 0 seconds"
 
     # Web Open Font Format (WOFF) 2.0
-    ExpiresByType application/font-woff2                "access plus 1 month"
-    ExpiresByType font/woff2                            "access plus 1 month"
+    ExpiresByType application/font-woff2                "access plus 0 seconds"
+    ExpiresByType font/woff2                            "access plus 0 seconds"
 
 
   # Other
 
-    ExpiresByType text/x-cross-domain-policy            "access plus 1 week"
+    ExpiresByType text/x-cross-domain-policy            "access plus 0 seconds"
 
 </IfModule>
 
