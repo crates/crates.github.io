@@ -49,9 +49,23 @@
 
       #crates-media-logo { z-index: 10; }
 
-      .read-more-linkedin {
+      a.read-more-linkedin {
         margin-bottom: 20px;
+        margin-left: 20px;
         font-weight: bold;
+      }
+
+      .references {
+        box-shadow: 0px 8px 8px rgba(0,0,0,0.44);
+      }
+
+      .references p {
+        margin: 8px 16px;
+        padding: 4px 16px;
+        background-color: white;
+        border: solid 1px #ccc;
+        box-shadow: 0 4px 3px rgba(0,0,0,0.2);
+        border-radius: 4px;
       }
 
       .reference-pic {
@@ -72,7 +86,7 @@
         background-image: url('https://media.licdn.com/dms/image/C5603AQH-ATSGZLG3yw/profile-displayphoto-shrink_100_100/0?e=1577923200&v=beta&t=_U8lEuMSilh5D412xf3v7Ge-T62F5NV9U0CpQYmIlbk');
       }
 
-      footer.mdl-mega-footer a {
+      html body.mdl-demo .mdl-layout footer.mdl-mega-footer a {
         color: white;
       }
 
@@ -80,9 +94,16 @@
         text-align: center;
       }
 
-      ul.mdl-mega-footer--link-list li {
+      body.mdl-demo .mdl-mega-footer ul.mdl-mega-footer--link-list li {
         display: inline-block;
+        float: none;
+        width: auto;
+        padding: 0;
         margin: 0 auto;
+      }
+
+      body.mdl-demo .mdl-mega-footer ul.mdl-mega-footer--link-list li a {
+        color: white;
       }
 
       section.references h5 {
@@ -334,8 +355,7 @@
               <p>
                 I worked with Mike over the course of 4 years and he’s always been a source of inspiration to me. 
                 His leadership and advice has helped hone my own skills and resulted in my promotion to Senior Software Developer earlier this year.
-              </p>
-              <p>
+                <br><br>
                 Mike is very results oriented and always over delivers. 
                 He single handedly provided the inspiration and Proof of Concept for what has grown into the Peer Insights product. 
               </p>
@@ -358,8 +378,7 @@
               <p>
                 I worked as a mid-level front-end developer at Gartner with Michael as my lead. 
                 In my almost 2 decades in this field I have never met anyone close to as talented as Michael is.
-              </p>
-              <p>
+                <br><br>
                 His knowledge of JavaScript in all its forms is unmatched, seriously. 
                 Added to this he is very knowledgeable and appreciative of visual design and 
                 business making him truly a unicorn in the development world.
@@ -374,6 +393,7 @@
           </section>
         </div>
 
+        <!--
         <div class="mdl-layout__tab-panel" id=front-end-developer-experience>
           <section class="section--center mdl-grid">
             <div>
@@ -390,6 +410,7 @@
             </div>
           </section>
         </div>
+        -->
 
         <!--
         <div 
